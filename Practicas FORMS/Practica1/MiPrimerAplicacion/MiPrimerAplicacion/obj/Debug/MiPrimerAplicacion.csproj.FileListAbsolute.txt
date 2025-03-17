@@ -1,0 +1,10 @@
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\bin\Debug\MiPrimerAplicacion.exe.config
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\bin\Debug\MiPrimerAplicacion.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\bin\Debug\MiPrimerAplicacion.pdb
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.csproj.AssemblyReference.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.frmPractica.resources
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.Properties.Resources.resources
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.csproj.GenerateResource.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\Practicas FORMS\Practica1\MiPrimerAplicacion\MiPrimerAplicacion\obj\Debug\MiPrimerAplicacion.pdb

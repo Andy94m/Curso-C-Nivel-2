@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\practicas forms\\practica1\\miprimeraplicacion\\practica 5\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|solutionrelative:practica 5\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\practicas forms\\practica1\\miprimeraplicacion\\practica 5\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|solutionrelative:practica 5\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA46E1A-2E74-47BD-A2F0-B75A7765B4A1}|Practica4\\Practica4.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\practicas forms\\practica1\\miprimeraplicacion\\practica4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AA46E1A-2E74-47BD-A2F0-B75A7765B4A1}|Practica4\\Practica4.csproj|solutionrelative:practica4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\practicas forms\\practica1\\miprimeraplicacion\\practica 5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C8E6CE1-C71D-4936-A325-49A0A83498B0}|Practica 5\\Practica 5.csproj|solutionrelative:practica 5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica4\\Form1.cs",
+              "RelativeDocumentMoniker": "Practica4\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica4\\Form1.cs",
+              "RelativeToolTip": "Practica4\\Form1.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAWwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:57:58.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Program.cs",
+              "RelativeDocumentMoniker": "Practica 5\\Program.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Program.cs",
+              "RelativeToolTip": "Practica 5\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:39:26.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Form1.cs",
+              "RelativeDocumentMoniker": "Practica 5\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Form1.cs",
+              "RelativeToolTip": "Practica 5\\Form1.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAlwE8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:38:49.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Form1.cs",
+              "RelativeDocumentMoniker": "Practica 5\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\Practicas FORMS\\Practica1\\MiPrimerAplicacion\\Practica 5\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Practica 5\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:28:16.272Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

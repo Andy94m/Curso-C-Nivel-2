@@ -1,0 +1,7 @@
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\bin\Debug\EjemplosDateTime.exe.config
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\bin\Debug\EjemplosDateTime.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\bin\Debug\EjemplosDateTime.pdb
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\obj\Debug\EjemplosDateTime.csproj.AssemblyReference.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\obj\Debug\EjemplosDateTime.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\obj\Debug\EjemplosDateTime.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\Winform\EjemplosDateTime\EjemplosDateTime\obj\Debug\EjemplosDateTime.pdb

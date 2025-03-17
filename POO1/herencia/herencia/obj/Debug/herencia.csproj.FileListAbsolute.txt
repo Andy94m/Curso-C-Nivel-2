@@ -1,0 +1,7 @@
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\bin\Debug\herencia.exe.config
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\bin\Debug\herencia.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\bin\Debug\herencia.pdb
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\obj\Debug\herencia.csproj.AssemblyReference.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\obj\Debug\herencia.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\obj\Debug\herencia.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\POO1\herencia\herencia\obj\Debug\herencia.pdb

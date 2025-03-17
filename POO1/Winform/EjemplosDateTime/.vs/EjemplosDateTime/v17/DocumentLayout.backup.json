@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ADCA0385-8241-4F1B-818A-C50DF7E8524F}|Ejemplo2\\Ejemplo2.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\ejemplosdatetime\\ejemplo2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADCA0385-8241-4F1B-818A-C50DF7E8524F}|Ejemplo2\\Ejemplo2.csproj|solutionrelative:ejemplo2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01766D0E-2BCB-4292-8F51-809BBAB469D8}|EjemplosDateTime\\EjemplosDateTime.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\ejemplosdatetime\\ejemplosdatetime\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01766D0E-2BCB-4292-8F51-809BBAB469D8}|EjemplosDateTime\\EjemplosDateTime.csproj|solutionrelative:ejemplosdatetime\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADCA0385-8241-4F1B-818A-C50DF7E8524F}|Ejemplo2\\Ejemplo2.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\ejemplosdatetime\\ejemplo2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ADCA0385-8241-4F1B-818A-C50DF7E8524F}|Ejemplo2\\Ejemplo2.csproj|solutionrelative:ejemplo2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\Ejemplo2\\Form1.cs",
+              "RelativeDocumentMoniker": "Ejemplo2\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\Ejemplo2\\Form1.cs",
+              "RelativeToolTip": "Ejemplo2\\Form1.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAlwBMAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T00:25:20.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\Ejemplo2\\Form1.cs",
+              "RelativeDocumentMoniker": "Ejemplo2\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\Ejemplo2\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Ejemplo2\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T00:22:03.301Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\EjemplosDateTime\\Program.cs",
+              "RelativeDocumentMoniker": "EjemplosDateTime\\Program.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\EjemplosDateTime\\EjemplosDateTime\\Program.cs",
+              "RelativeToolTip": "EjemplosDateTime\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowA4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T23:30:04.495Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

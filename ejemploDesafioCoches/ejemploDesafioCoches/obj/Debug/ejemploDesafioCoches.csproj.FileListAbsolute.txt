@@ -1,0 +1,7 @@
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\bin\Debug\ejemploDesafioCoches.exe.config
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\bin\Debug\ejemploDesafioCoches.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\bin\Debug\ejemploDesafioCoches.pdb
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\obj\Debug\ejemploDesafioCoches.csproj.AssemblyReference.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\obj\Debug\ejemploDesafioCoches.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\obj\Debug\ejemploDesafioCoches.exe
+C:\Users\Andy\Desktop\MaxiPrograma\Curso C# nivel 2\ejemploDesafioCoches\ejemploDesafioCoches\obj\Debug\ejemploDesafioCoches.pdb

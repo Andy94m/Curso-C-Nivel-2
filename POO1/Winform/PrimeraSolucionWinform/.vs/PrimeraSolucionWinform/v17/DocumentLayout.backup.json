@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\primerasolucionwinform\\ejemplo1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|solutionrelative:ejemplo1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\primerasolucionwinform\\ejemplo1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|solutionrelative:ejemplo1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\winform\\primerasolucionwinform\\ejemplo1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7B23C6-DA83-4887-91C9-7A625D24F1DF}|ejemplo1\\ejemplo1.csproj|solutionrelative:ejemplo1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "ejemplo1\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.Designer.cs*",
+              "RelativeToolTip": "ejemplo1\\Form1.Designer.cs*",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T20:42:30.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.cs",
+              "RelativeDocumentMoniker": "ejemplo1\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.cs",
+              "RelativeToolTip": "ejemplo1\\Form1.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIAwwB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T00:37:23.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.cs",
+              "RelativeDocumentMoniker": "ejemplo1\\Form1.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Winform\\PrimeraSolucionWinform\\ejemplo1\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ejemplo1\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T00:36:58.076Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

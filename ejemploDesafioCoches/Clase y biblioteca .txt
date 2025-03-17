@@ -1,0 +1,53 @@
+Desafío 2: Clase Libro
+Crear un proyecto de consola .Net Framework.
+Crear la clase Libro.
+Agregar los siguientes atributos:
+
+Titulo (string)
+Autor (string)
+ISBN (string)
+Paginas (int)
+PaginasLeidas (int)
+
+Agregar las propiedades correspondientes.
+Titulo: solo lectura.
+Autor: solo lectura.
+ISBN: solo lectura.
+Paginas: solo lectura.
+PaginasLeidas: lectura y escritura.
+
+Agregar un constructor que reciba Titulo, Autor, ISBN y Paginas.
+Crear un método Leer(int paginas) que aumente las PaginasLeidas del libro.
+Sobrecargar el método Leer(int paginas, string comentario) que además de aumentar las PaginasLeidas, reciba un comentario y devuelva un string con la leyenda "Leyendo {paginas} páginas - {comentario}".
+Crear objetos de la clase Libro en el main del programa y probar los métodos.
+
+Desafío 3: Clase CuentaBancaria
+Crear un proyecto de consola .Net Framework.
+
+Crear la clase CuentaBancaria.
+
+Agregar los siguientes atributos:
+
+NumeroCuenta (string)
+
+Titular (string)
+
+Saldo (decimal)
+
+Agregar las propiedades correspondientes.
+
+NumeroCuenta: solo lectura.
+
+Titular: solo lectura.
+
+Saldo: solo lectura.
+
+Agregar un constructor que reciba NumeroCuenta y Titular.
+
+Crear un método Depositar(decimal monto) que aumente el saldo de la cuenta.
+
+Crear un método Retirar(decimal monto) que disminuya el saldo de la cuenta, pero solo si hay suficientes fondos.
+
+Sobrecargar el método Retirar(decimal monto, string descripcion) que además de disminuir el saldo, reciba una descripción y devuelva un string con la leyenda "Retirando {monto} - {descripcion}".
+
+Crear objetos de la clase CuentaBancaria en el main del programa y probar los métodos.

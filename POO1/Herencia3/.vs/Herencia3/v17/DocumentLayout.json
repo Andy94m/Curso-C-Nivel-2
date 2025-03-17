@@ -1,0 +1,197 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|c:\\users\\andy\\desktop\\maxiprograma\\curso c# nivel 2\\poo1\\herencia3\\herencia3\\flyable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\flyable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\canario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\canario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\aguila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\aguila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\animalsalvaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\animalsalvaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\gato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\gato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\perro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\perro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\pez.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\pez.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\tigre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\tigre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\herencia3\\animaldomestico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CC0102-7257-4485-BD25-43C9BFBD253F}|Herencia3\\Herencia3.csproj|solutionrelative:herencia3\\animaldomestico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Flyable.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Flyable.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Flyable.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Flyable.cs",
+              "RelativeToolTip": "Herencia3\\Flyable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T13:57:32.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Tigre.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Tigre.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Tigre.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Tigre.cs",
+              "RelativeToolTip": "Herencia3\\Tigre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:52:56.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Pez.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Pez.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Pez.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Pez.cs",
+              "RelativeToolTip": "Herencia3\\Pez.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:52:44.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Perro.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Perro.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Perro.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Perro.cs",
+              "RelativeToolTip": "Herencia3\\Perro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:52:37.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Gato.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Gato.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Gato.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Gato.cs",
+              "RelativeToolTip": "Herencia3\\Gato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:52:24.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Canario.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Canario.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Canario.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Canario.cs",
+              "RelativeToolTip": "Herencia3\\Canario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:52:12.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Aguila.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Aguila.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Aguila.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Aguila.cs",
+              "RelativeToolTip": "Herencia3\\Aguila.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:51:53.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Animal.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Animal.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Animal.cs",
+              "RelativeToolTip": "Herencia3\\Animal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:51:34.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AnimalSalvaje.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\AnimalSalvaje.cs",
+              "RelativeDocumentMoniker": "Herencia3\\AnimalSalvaje.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\AnimalSalvaje.cs",
+              "RelativeToolTip": "Herencia3\\AnimalSalvaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:51:18.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AnimalDomestico.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\AnimalDomestico.cs",
+              "RelativeDocumentMoniker": "Herencia3\\AnimalDomestico.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\AnimalDomestico.cs",
+              "RelativeToolTip": "Herencia3\\AnimalDomestico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:51:06.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Program.cs",
+              "RelativeDocumentMoniker": "Herencia3\\Program.cs",
+              "ToolTip": "C:\\Users\\Andy\\Desktop\\MaxiPrograma\\Curso C# nivel 2\\POO1\\Herencia3\\Herencia3\\Program.cs",
+              "RelativeToolTip": "Herencia3\\Program.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAmwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T22:48:17.365Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

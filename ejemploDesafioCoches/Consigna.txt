@@ -1,0 +1,32 @@
+Desafío 1: Clase Coche
+Crear un proyecto de consola .Net Framework.
+
+Crear la clase Coche.
+
+Agregar los siguientes atributos:
+
+Marca (string)
+
+Modelo (string)
+
+Año (int)
+
+Kilometraje (int)
+
+Agregar las propiedades correspondientes.
+
+Marca: solo lectura.
+
+Modelo: solo lectura.
+
+Año: solo lectura.
+
+Kilometraje: lectura y escritura.
+
+Agregar un constructor que reciba Marca, Modelo y Año.
+
+Crear un método Conducir(int kilometros) que aumente el kilometraje del coche.
+
+Sobrecargar el método Conducir(int kilometros, string destino) que además de aumentar el kilometraje, reciba un destino y devuelva un string con la leyenda "Conduciendo a {destino} durante {kilometros} km.".
+
+Crear objetos de la clase Coche en el main del programa y probar los métodos.
