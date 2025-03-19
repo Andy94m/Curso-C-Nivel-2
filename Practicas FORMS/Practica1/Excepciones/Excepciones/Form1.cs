@@ -19,16 +19,14 @@ namespace Excepciones
 
         private void BTN1_Click(object sender, EventArgs e)
         {
-            int a, b, r;
+            int resultado;
 
             try
             {
-                a = int.Parse(textBox1.Text);
-                b = int.Parse(textBox2.Text);
-                r = a + b;
-                label1.Text = " = " + r;
+                resultado = calcular();
+                label1.Text = " = " + resultado;
             }
-            catch (FormatException ex)
+            /*catch (FormatException ex)
             {
                 MessageBox.Show("Por favor cargar solo numeros");
             }
@@ -39,13 +37,36 @@ namespace Excepciones
             catch (OverflowException ex)
             {
                 MessageBox.Show("Sobrecargó el int");
-            }
+            }*/
             catch (Exception ex) 
             {
                 MessageBox.Show("Hubo un error al ejecutar...");
             }
+            //finally se ejecuta siempre, haya fallado o no la app
+            finally
+            {
+
+            }
 
 
+        }
+
+        private int calcular()
+        {
+            int a, b, r;
+
+            try
+            {
+                a = int.Parse(textBox1.Text);
+                b = int.Parse(textBox2.Text);
+                r = a + b;
+                return r;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
