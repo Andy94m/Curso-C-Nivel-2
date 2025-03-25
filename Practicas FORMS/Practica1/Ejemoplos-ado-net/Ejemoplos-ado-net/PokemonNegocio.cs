@@ -20,7 +20,7 @@ namespace Ejemoplos_ado_net
             {
                 conexion.ConnectionString = "server=localhost; database=POKEDEX_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Numero, Nombre, Descripcion from POKEMONS";
+                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen from POKEMONS";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -32,6 +32,7 @@ namespace Ejemoplos_ado_net
                     aux.Numero = lector.GetInt32(0);
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
+                    aux.UrlImagen = (string)lector["UrlImagen"];
 
                     lista.Add(aux);
                 }
@@ -40,7 +41,6 @@ namespace Ejemoplos_ado_net
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
