@@ -11,5 +11,6 @@ namespace Discos
         public int Numero { get; set; }
         public string Nombre { get; set; }
         public int Canciones { get; set; }
+        public string UrlImagen { get; set; }
     }
 }
