@@ -21,7 +21,7 @@ namespace Discos
             {
                 conexion.ConnectionString = "server=localhost; database=DISCOS_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select ID, Titulo, CantidadCanciones, UrlImagenTapa from DISCOS";
+                comando.CommandText = "select D.Id, Titulo, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -34,6 +34,12 @@ namespace Discos
                     aux.Nombre = (string)lector["Titulo"];
                     aux.Canciones = (int)lector["CantidadCanciones"];
                     aux.UrlImagen = (string)lector["UrlImagenTapa"];
+
+                    aux.Genero = new Estilos();
+                    aux.Genero.Descripcion = (string)lector["Genero"];
+
+                    aux.Formato = new Edicion();
+                    aux.Formato.Descripcion = (string)lector["Formato"];
 
                     lista.Add(aux);
                 }

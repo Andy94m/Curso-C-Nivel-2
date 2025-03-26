@@ -12,5 +12,7 @@ namespace Discos
         public string Nombre { get; set; }
         public int Canciones { get; set; }
         public string UrlImagen { get; set; }
+        public Estilos Genero { get; set; }
+        public Edicion Formato{ get; set; }
     }
 }

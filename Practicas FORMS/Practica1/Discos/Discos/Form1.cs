@@ -24,6 +24,7 @@ namespace Discos
             AlbumNegocio negocio = new AlbumNegocio();
             listaDiscos = negocio.listar();
             dgvAlbum.DataSource = listaDiscos;
+            dgvAlbum.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaDiscos[0].UrlImagen);
         }
 
