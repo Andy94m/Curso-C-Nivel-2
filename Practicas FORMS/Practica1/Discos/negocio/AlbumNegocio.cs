@@ -4,11 +4,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows;
+using dominio;
 
-namespace Discos
+namespace negocio
 {
-    internal class AlbumNegocio
+    public class AlbumNegocio
     {
         public List<Album> listar()
         {

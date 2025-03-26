@@ -1,16 +1,15 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Discos
+namespace dominio
 {
-    internal class Estilos
+    public class Edicion
     {
-        public int Id { get; set; } 
-        public string Descripcion{ get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
 
         public override string ToString()
         {
