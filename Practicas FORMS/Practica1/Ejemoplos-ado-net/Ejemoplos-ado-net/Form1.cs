@@ -23,6 +23,7 @@ namespace Ejemoplos_ado_net
             PokemonNegocio negocio = new PokemonNegocio();
             listaPokemon = negocio.listar();
             dgvPokemons.DataSource = listaPokemon;
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaPokemon[0].UrlImagen);
         }
 
