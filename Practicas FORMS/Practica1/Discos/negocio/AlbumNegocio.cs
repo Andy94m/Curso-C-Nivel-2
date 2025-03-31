@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +23,7 @@ namespace negocio
             {
                 conexion.ConnectionString = "server=localhost; database=DISCOS_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select D.Id, Titulo, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
+                comando.CommandText = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -33,6 +34,7 @@ namespace negocio
                     Album aux = new Album();
                     aux.Numero = (int)lector["Id"];
                     aux.Nombre = (string)lector["Titulo"];
+                    aux.Fecha = (DateTime)lector["FechaLanzamiento"];
                     aux.Canciones = (int)lector["CantidadCanciones"];
                     aux.UrlImagen = (string)lector["UrlImagenTapa"];
 
@@ -51,6 +53,31 @@ namespace negocio
             {
                 throw ex;
             }
+        }
+
+        public void agregar(Album nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) values ('" + nuevo.Nombre + "', " + nuevo.Fecha.ToString("yyyy-MM-dd") + ", " + nuevo.Canciones + ")");
+                datos.ejecutarAccion();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Console.WriteLine($"Consulta generada: insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) values ('{nuevo.Nombre}', '{nuevo.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}', {nuevo.Numero})");
+            }
+        }
+
+        public void modificar(Album modificar)
+        {
+
         }
     }
 }

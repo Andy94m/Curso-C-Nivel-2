@@ -40,13 +40,13 @@
             this.dgvAlbum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlbum.Location = new System.Drawing.Point(12, 72);
             this.dgvAlbum.Name = "dgvAlbum";
-            this.dgvAlbum.Size = new System.Drawing.Size(575, 299);
+            this.dgvAlbum.Size = new System.Drawing.Size(642, 299);
             this.dgvAlbum.TabIndex = 0;
             this.dgvAlbum.SelectionChanged += new System.EventHandler(this.dgvAlbum_SelectionChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(593, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(674, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 299);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -59,7 +59,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 46);
             this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "button1";
+            this.btnAgregar.Text = "Agregar album";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -72,6 +72,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvAlbum);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlbum)).EndInit();

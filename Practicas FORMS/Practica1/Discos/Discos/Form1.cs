@@ -51,7 +51,8 @@ namespace Discos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            frmAltaAlbum alta = new frmAltaAlbum();
+            alta.ShowDialog();
         }
     }
 }
