@@ -34,10 +34,28 @@ namespace Discos
                 disco.Nombre = txtNombre.Text;
                 disco.Fecha = dtpFecha.Value;
                 disco.Canciones = int.Parse(txtCant.Text);
+                
 
                 negocio.agregar(disco);
                 MessageBox.Show("Agregado exitosamente");
                 Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void frmAltaAlbum_Load(object sender, EventArgs e)
+        {
+            EdicionNegocio edicionNegocio = new EdicionNegocio();
+            EstilosNegocio estilosNegocio = new EstilosNegocio();
+
+            try
+            {
+                cboEdicion.DataSource = edicionNegocio.listar();
+                cboEstilo.DataSource = estilosNegocio.listar();
             }
             catch (Exception ex)
             {
