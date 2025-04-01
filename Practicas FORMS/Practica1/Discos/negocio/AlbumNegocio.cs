@@ -36,7 +36,9 @@ namespace negocio
                     aux.Nombre = (string)lector["Titulo"];
                     aux.Fecha = (DateTime)lector["FechaLanzamiento"];
                     aux.Canciones = (int)lector["CantidadCanciones"];
-                    aux.UrlImagen = (string)lector["UrlImagenTapa"];
+
+                    if (!(lector["UrlImagenTapa"] is DBNull))
+                        aux.UrlImagen = (string)lector["UrlImagenTapa"];
 
                     aux.Genero = new Estilos();
                     aux.Genero.Descripcion = (string)lector["Genero"];
