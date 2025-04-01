@@ -12,7 +12,10 @@ namespace negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-        public SqlDataReader Lector { get; }
+        public SqlDataReader Lector 
+        {
+            get {  return lector; }
+        }
 
         public AccesoDatos()
         {

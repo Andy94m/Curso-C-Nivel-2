@@ -130,6 +130,7 @@
             // 
             // cboEdicion
             // 
+            this.cboEdicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEdicion.FormattingEnabled = true;
             this.cboEdicion.Location = new System.Drawing.Point(224, 184);
             this.cboEdicion.Name = "cboEdicion";
@@ -138,6 +139,7 @@
             // 
             // cboEstilo
             // 
+            this.cboEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstilo.FormattingEnabled = true;
             this.cboEstilo.Location = new System.Drawing.Point(224, 212);
             this.cboEstilo.Name = "cboEstilo";
@@ -164,6 +166,7 @@
             this.Name = "frmAltaAlbum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Album";
+            this.Load += new System.EventHandler(this.frmAltaAlbum_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

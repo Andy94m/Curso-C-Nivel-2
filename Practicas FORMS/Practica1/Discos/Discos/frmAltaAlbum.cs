@@ -17,6 +17,7 @@ namespace Discos
         public frmAltaAlbum()
         {
             InitializeComponent();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -28,12 +29,18 @@ namespace Discos
         {
             Album disco = new Album();
             AlbumNegocio negocio = new AlbumNegocio();
+            EdicionNegocio edicionNegocio = new EdicionNegocio();
+            var lista = edicionNegocio.listar();
+            Console.WriteLine("Cantidad de elementos en la lista: " + lista.Count);
+            cboEdicion.DataSource = lista;
 
             try
             {
                 disco.Nombre = txtNombre.Text;
                 disco.Fecha = dtpFecha.Value;
                 disco.Canciones = int.Parse(txtCant.Text);
+                disco.Formato = (Edicion)cboEdicion.SelectedItem;
+                disco.Genero = (Estilos)cboEstilo.SelectedItem;
                 
 
                 negocio.agregar(disco);
@@ -51,6 +58,7 @@ namespace Discos
         {
             EdicionNegocio edicionNegocio = new EdicionNegocio();
             EstilosNegocio estilosNegocio = new EstilosNegocio();
+            Console.WriteLine("HOLA KE ASE \n \n " + edicionNegocio.listar());
 
             try
             {
@@ -59,7 +67,6 @@ namespace Discos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
