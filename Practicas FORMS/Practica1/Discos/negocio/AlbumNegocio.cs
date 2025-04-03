@@ -64,15 +64,14 @@ namespace negocio
                   $"VALUES ('{nuevo.Nombre}', '{nuevo.Fecha}', {nuevo.Canciones}, {nuevo.Formato.Id}, {nuevo.Genero.Id})");
             try
             {
-                datos.setearConsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion) values (@Titulo, @FechaLanzamiento, @CantidadCanciones, @IdEstilo, @IdTipoEdicion)");
+                datos.setearConsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion) values (@Titulo, @FechaLanzamiento, @CantidadCanciones, @UrlImagenTapa, @IdEstilo, @IdTipoEdicion)");
                 datos.setearParametro("@Titulo", nuevo.Nombre);
                 datos.setearParametro("@FechaLanzamiento", nuevo.Fecha);
                 datos.setearParametro("@CantidadCanciones", nuevo.Canciones);
+                datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
                 datos.setearParametro("@IdEstilo", nuevo.Genero.Id);
                 datos.setearParametro("@IdTipoEdicion", nuevo.Formato.Id);
 
-                Console.WriteLine(nuevo.Formato.Id.ToString());
-                Console.WriteLine(nuevo.Genero.Id.ToString());
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

@@ -64,7 +64,11 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("insert into POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad) VALUES (" + nuevo.Numero + ", '" + nuevo.Nombre + "','" + nuevo.Descripcion + "', 1, @idTipo, @idDebilidad)");
+                datos.setearConsulta("insert into POKEMONS (Numero, Nombre, Descripcion, Activo, UrlImagen, IdTipo, IdDebilidad) VALUES (@Numero, @Nombre, @Descripcion," + 1 + ", @UrlImagen, @IdTipo, @IdDebilidad)");
+                datos.setearParametro("@Numero", nuevo.Numero);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@UrlImagen", nuevo.UrlImagen);
                 datos.setearParametro("@idTipo", nuevo.Tipo.id);
                 datos.setearParametro("@idDebilidad", nuevo.Debilidad.id);
                 datos.ejecutarAccion();

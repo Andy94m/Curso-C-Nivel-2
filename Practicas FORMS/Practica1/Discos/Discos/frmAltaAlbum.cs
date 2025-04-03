@@ -39,18 +39,18 @@ namespace Discos
                 disco.Nombre = txtNombre.Text;
                 disco.Fecha = dtpFecha.Value;
                 disco.Canciones = int.Parse(txtCant.Text);
+                disco.UrlImagen = txtUrlImagen.Text;
                 disco.Formato = (Edicion)cboEdicion.SelectedItem;
                 disco.Genero = (Estilos)cboEstilo.SelectedItem;
 
                 negocio.agregar(disco);
-                MessageBox.Show("Agregado exitosamente \n" + disco.Formato.ToString() + "\n" + disco.Genero.ToString());
+                MessageBox.Show("Agregado exitosamente");
 
 
                 Close();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -69,6 +69,24 @@ namespace Discos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pictureBox1.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pictureBox1.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
     }
