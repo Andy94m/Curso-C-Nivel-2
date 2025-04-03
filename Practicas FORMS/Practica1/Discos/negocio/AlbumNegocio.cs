@@ -60,10 +60,11 @@ namespace negocio
         public void agregar(Album nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-
+            Console.WriteLine($"Consulta SQL: INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdTipoEdicion, IdEstilo) " +
+                  $"VALUES ('{nuevo.Nombre}', '{nuevo.Fecha}', {nuevo.Canciones}, {nuevo.Formato.Id}, {nuevo.Genero.Id})");
             try
             {
-                datos.setearConsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion) values (@Titulo, @FechaLanzamiento, @CantidadCanciones, @IdEstilo, @IdTipoEdicion");
+                datos.setearConsulta("insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion) values (@Titulo, @FechaLanzamiento, @CantidadCanciones, @IdEstilo, @IdTipoEdicion)");
                 datos.setearParametro("@Titulo", nuevo.Nombre);
                 datos.setearParametro("@FechaLanzamiento", nuevo.Fecha);
                 datos.setearParametro("@CantidadCanciones", nuevo.Canciones);
