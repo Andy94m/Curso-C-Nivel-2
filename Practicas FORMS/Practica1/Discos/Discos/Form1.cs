@@ -23,17 +23,29 @@ namespace Discos
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AlbumNegocio negocio = new AlbumNegocio();
-            listaDiscos = negocio.listar();
-            dgvAlbum.DataSource = listaDiscos;
-            dgvAlbum.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaDiscos[0].UrlImagen);
+            cargar();
         }
 
         private void dgvAlbum_SelectionChanged(object sender, EventArgs e)
         {
             Album seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.UrlImagen);
+        }
+
+        private void cargar()
+        {
+            AlbumNegocio negocio = new AlbumNegocio();
+            try
+            {
+                listaDiscos = negocio.listar();
+                dgvAlbum.DataSource= listaDiscos;
+                dgvAlbum.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaDiscos[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -53,6 +65,7 @@ namespace Discos
         {
             frmAltaAlbum alta = new frmAltaAlbum();
             alta.ShowDialog();
+            cargar();
         }
     }
 }

@@ -38,8 +38,10 @@
             // dgvAlbum
             // 
             this.dgvAlbum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlbum.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvAlbum.Location = new System.Drawing.Point(12, 72);
             this.dgvAlbum.Name = "dgvAlbum";
+            this.dgvAlbum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlbum.Size = new System.Drawing.Size(642, 299);
             this.dgvAlbum.TabIndex = 0;
             this.dgvAlbum.SelectionChanged += new System.EventHandler(this.dgvAlbum_SelectionChanged);
