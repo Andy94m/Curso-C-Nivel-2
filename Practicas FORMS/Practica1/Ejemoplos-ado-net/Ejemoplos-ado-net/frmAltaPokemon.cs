@@ -58,7 +58,6 @@ namespace Ejemoplos_ado_net
                     negocio.agregar(pokemon);
                     MessageBox.Show("Agregó exitosamente");
                 }
-
                 Close();
             }
             catch (Exception ex)
