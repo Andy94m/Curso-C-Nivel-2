@@ -35,11 +35,6 @@ namespace Discos
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             AlbumNegocio negocio = new AlbumNegocio();
-                 
-            //EdicionNegocio edicionNegocio = new EdicionNegocio();
-            //var lista = edicionNegocio.listar();
-            //Console.WriteLine("Cantidad de elementos en la lista: " + lista.Count);
-            //cboEdicion.DataSource = lista;
 
             try
             {
@@ -75,7 +70,6 @@ namespace Discos
         {
             EdicionNegocio edicionNegocio = new EdicionNegocio();
             EstilosNegocio estilosNegocio = new EstilosNegocio();
-            //Console.WriteLine("Load fue cargado correctamente \n \n " + edicionNegocio.listar());
 
             try
             {
@@ -89,25 +83,15 @@ namespace Discos
 
                 if (disco != null)
                 {
-                    if (disco != null)
-                    {
-                        Console.WriteLine($"Formato.Id: {disco.Formato?.Id}");
-                        Console.WriteLine($"Genero.Id: {disco.Genero?.Id}");
-                    }
+                    Console.WriteLine($"Formato.Id: {disco.Formato?.Id}");
+                    Console.WriteLine($"Genero.Id: {disco.Genero?.Id}");
+                    
                     txtNombre.Text = disco.Nombre.ToString();
                     dtpFecha.Value = disco.Fecha;
                     txtCant.Text = disco.Canciones.ToString();
                     txtUrlImagen.Text = disco.UrlImagen;
                     cboEdicion.SelectedValue = disco.Formato.Id;
                     cboEstilo.SelectedValue = disco.Genero.Id;
-                    /*Console.WriteLine("Linea 98 \n \n ");
-                    Console.WriteLine($"SelectedValue de cboEdicion: {cboEdicion.SelectedValue}");
-                    Console.WriteLine($"SelectedValue de cboEstilo: {cboEstilo.SelectedValue}");
-
-                    foreach (Edicion edicion in cboEdicion.Items)
-                    {
-                        Console.WriteLine($"Id: {edicion.Id}, Descripcion: {edicion.Descripcion}");
-                    }*/
                 }
             }
             catch (Exception ex)

@@ -93,6 +93,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("update DISCOS set Titulo = @Nombre, FechaLanzamiento = @Fecha, CantidadCanciones = @Canciones, UrlImagenTapa = @UrlImagen, IdEstilo = @IdEstilo, IdTipoEdicion = @IdTipoEdicion where Id = @Id");
+                datos.setearParametro("@Id", album.Numero);
                 datos.setearParametro("@Nombre", album.Nombre);
                 datos.setearParametro("@Fecha", album.Fecha);
                 datos.setearParametro("@Canciones", album.Canciones);
@@ -101,7 +102,6 @@ namespace negocio
                 datos.setearParametro("@IdTipoEdicion", album.Formato.Id);
 
                 datos.ejecutarAccion();
-
             }
             catch (Exception ex)
             {
@@ -112,5 +112,35 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void eliminar (int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE from DISCOS where Id = @Id");
+                datos.setearParametro("@Id",id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public void eliminarLogico(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE DISCOS set Activo where");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

@@ -77,17 +77,46 @@ namespace Discos
         {
             Album seleccionado;
             seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
-
-            var genero = dgvAlbum.CurrentRow.Cells["Genero"].Value;
-            var formato = dgvAlbum.CurrentRow.Cells["Formato"].Value;
-            Console.WriteLine("Comprobacion ModificarClick-----------------");
-            Console.WriteLine("Género: " + genero);
-            Console.WriteLine("Formato: " + formato);
-            Console.WriteLine("------------------------------------");
-
             frmAltaAlbum modificar = new frmAltaAlbum(seleccionado);
             modificar.ShowDialog();
             cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnEliminarLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
+        }
+
+        private void Eliminar(bool bandera = false)
+        {
+            AlbumNegocio negocio = new AlbumNegocio();
+            Album seleccionado;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿De verdad queres eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
+
+                    if (bandera)
+                        negocio.eliminarLogico(seleccionado.Numero);
+                    else
+                        negocio.eliminar(seleccionado.Numero);
+
+                    MessageBox.Show("Eliminado correctamente");
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
