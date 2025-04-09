@@ -14,9 +14,17 @@ namespace Discos
 {
     public partial class frmAltaAlbum : Form
     {
+        private Album disco = null;
         public frmAltaAlbum()
         {
             InitializeComponent();
+        }
+
+        public frmAltaAlbum(Album disco)
+        {
+            InitializeComponent();
+            this.disco = disco;
+            Text = "Modificar Album";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,16 +34,18 @@ namespace Discos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Album disco = new Album();
             AlbumNegocio negocio = new AlbumNegocio();
-            EdicionNegocio edicionNegocio = new EdicionNegocio();
+                 
+            //EdicionNegocio edicionNegocio = new EdicionNegocio();
             //var lista = edicionNegocio.listar();
             //Console.WriteLine("Cantidad de elementos en la lista: " + lista.Count);
             //cboEdicion.DataSource = lista;
 
-
             try
             {
+                if(disco == null)
+                    disco = new Album();
+
                 disco.Nombre = txtNombre.Text;
                 disco.Fecha = dtpFecha.Value;
                 disco.Canciones = int.Parse(txtCant.Text);
@@ -43,10 +53,16 @@ namespace Discos
                 disco.Formato = (Edicion)cboEdicion.SelectedItem;
                 disco.Genero = (Estilos)cboEstilo.SelectedItem;
 
-                negocio.agregar(disco);
-                MessageBox.Show("Agregado exitosamente");
-
-
+                if (disco.Numero != 0)
+                {
+                    negocio.modificar(disco);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else 
+                {
+                    negocio.agregar(disco);
+                    MessageBox.Show("Agregado Exitosamente");
+                }
                 Close();
             }
             catch (Exception ex)
@@ -64,7 +80,35 @@ namespace Discos
             try
             {
                 cboEdicion.DataSource = edicionNegocio.listar();
+                cboEdicion.ValueMember = "Id";
+                cboEdicion.DisplayMember = "Descripcion";
+
                 cboEstilo.DataSource = estilosNegocio.listar();
+                cboEstilo.ValueMember = "Id";
+                cboEstilo.DisplayMember = "Descripcion";
+
+                if (disco != null)
+                {
+                    if (disco != null)
+                    {
+                        Console.WriteLine($"Formato.Id: {disco.Formato?.Id}");
+                        Console.WriteLine($"Genero.Id: {disco.Genero?.Id}");
+                    }
+                    txtNombre.Text = disco.Nombre.ToString();
+                    dtpFecha.Value = disco.Fecha;
+                    txtCant.Text = disco.Canciones.ToString();
+                    txtUrlImagen.Text = disco.UrlImagen;
+                    cboEdicion.SelectedValue = disco.Formato.Id;
+                    cboEstilo.SelectedValue = disco.Genero.Id;
+                    /*Console.WriteLine("Linea 98 \n \n ");
+                    Console.WriteLine($"SelectedValue de cboEdicion: {cboEdicion.SelectedValue}");
+                    Console.WriteLine($"SelectedValue de cboEstilo: {cboEstilo.SelectedValue}");
+
+                    foreach (Edicion edicion in cboEdicion.Items)
+                    {
+                        Console.WriteLine($"Id: {edicion.Id}, Descripcion: {edicion.Descripcion}");
+                    }*/
+                }
             }
             catch (Exception ex)
             {
@@ -85,7 +129,6 @@ namespace Discos
             }
             catch (Exception ex)
             {
-
                 pictureBox1.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }

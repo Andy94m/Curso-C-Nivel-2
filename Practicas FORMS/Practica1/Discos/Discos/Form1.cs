@@ -30,6 +30,11 @@ namespace Discos
         {
             Album seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.UrlImagen);
+
+            /*var genero = dgvAlbum.CurrentRow.Cells["Genero"].Value;
+            var formato = dgvAlbum.CurrentRow.Cells["Formato"].Value;
+            Console.WriteLine("Género: " + genero);
+            Console.WriteLine("Formato: " + formato);*/
         }
 
         private void cargar()
@@ -40,6 +45,7 @@ namespace Discos
                 listaDiscos = negocio.listar();
                 dgvAlbum.DataSource= listaDiscos;
                 dgvAlbum.Columns["UrlImagen"].Visible = false;
+                dgvAlbum.Columns["Numero"].Visible= false;
                 cargarImagen(listaDiscos[0].UrlImagen);
             }
             catch (Exception ex)
@@ -56,7 +62,6 @@ namespace Discos
             }
             catch (Exception ex)
             {
-
                 pictureBox1.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
@@ -65,6 +70,23 @@ namespace Discos
         {
             frmAltaAlbum alta = new frmAltaAlbum();
             alta.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Album seleccionado;
+            seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
+
+            var genero = dgvAlbum.CurrentRow.Cells["Genero"].Value;
+            var formato = dgvAlbum.CurrentRow.Cells["Formato"].Value;
+            Console.WriteLine("Comprobacion ModificarClick-----------------");
+            Console.WriteLine("Género: " + genero);
+            Console.WriteLine("Formato: " + formato);
+            Console.WriteLine("------------------------------------");
+
+            frmAltaAlbum modificar = new frmAltaAlbum(seleccionado);
+            modificar.ShowDialog();
             cargar();
         }
     }

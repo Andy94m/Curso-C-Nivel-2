@@ -23,7 +23,7 @@ namespace negocio
             {
                 conexion.ConnectionString = "server=localhost; database=DISCOS_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
+                comando.CommandText = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato, D.IdEstilo, D.IdTipoEdicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -41,9 +41,11 @@ namespace negocio
                         aux.UrlImagen = (string)lector["UrlImagenTapa"];
 
                     aux.Genero = new Estilos();
+                    aux.Genero.Id = (int)lector["IdEstilo"];
                     aux.Genero.Descripcion = (string)lector["Genero"];
 
                     aux.Formato = new Edicion();
+                    aux.Formato.Id = (int)lector["IdTipoEdicion"];
                     aux.Formato.Descripcion = (string)lector["Formato"];
 
                     lista.Add(aux);
@@ -80,13 +82,35 @@ namespace negocio
             }
             finally
             {
+                datos.cerrarConexion();
                 Console.WriteLine($"Consulta generada: insert into DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) values ('{nuevo.Nombre}', '{nuevo.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}', {nuevo.Numero})");
             }
         }
 
-        public void modificar(Album modificar)
+        public void modificar(Album album)
         {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update DISCOS set Titulo = @Nombre, FechaLanzamiento = @Fecha, CantidadCanciones = @Canciones, UrlImagenTapa = @UrlImagen, IdEstilo = @IdEstilo, IdTipoEdicion = @IdTipoEdicion where Id = @Id");
+                datos.setearParametro("@Nombre", album.Nombre);
+                datos.setearParametro("@Fecha", album.Fecha);
+                datos.setearParametro("@Canciones", album.Canciones);
+                datos.setearParametro("@UrlImagen", album.UrlImagen);
+                datos.setearParametro("@IdEstilo", album.Genero.Id);
+                datos.setearParametro("@IdTipoEdicion", album.Formato.Id);
 
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally 
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }
