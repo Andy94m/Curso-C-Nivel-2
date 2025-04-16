@@ -40,6 +40,7 @@ namespace Discos
         private void cargar()
         {
             AlbumNegocio negocio = new AlbumNegocio();
+            
             try
             {
                 listaDiscos = negocio.listar();
@@ -109,7 +110,7 @@ namespace Discos
                     else
                         negocio.eliminar(seleccionado.Numero);
 
-                    MessageBox.Show("Eliminado correctamente");
+                    //MessageBox.Show("Eliminado correctamente");
                     cargar();
                 }
             }
@@ -117,6 +118,11 @@ namespace Discos
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

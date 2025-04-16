@@ -23,7 +23,7 @@ namespace negocio
             {
                 conexion.ConnectionString = "server=localhost; database=DISCOS_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato, D.IdEstilo, D.IdTipoEdicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id";
+                comando.CommandText = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato, D.IdEstilo, D.IdTipoEdicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id and D.CantidadCanciones != 0";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -48,6 +48,7 @@ namespace negocio
                     aux.Formato.Id = (int)lector["IdTipoEdicion"];
                     aux.Formato.Descripcion = (string)lector["Formato"];
 
+                    
                     lista.Add(aux);
                 }
                 conexion.Close();
@@ -115,9 +116,9 @@ namespace negocio
 
         public void eliminar (int id)
         {
-            AccesoDatos datos = new AccesoDatos();
             try
             {
+                AccesoDatos datos = new AccesoDatos();
                 datos.setearConsulta("DELETE from DISCOS where Id = @Id");
                 datos.setearParametro("@Id",id);
                 datos.ejecutarAccion();
@@ -133,14 +134,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE DISCOS set Activo where");
+                datos.setearConsulta("UPDATE DISCOS set CantidadCanciones = 0 where Id = @id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
-
     }
 }
