@@ -28,13 +28,11 @@ namespace Discos
 
         private void dgvAlbum_SelectionChanged(object sender, EventArgs e)
         {
-            Album seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
-
-            /*var genero = dgvAlbum.CurrentRow.Cells["Genero"].Value;
-            var formato = dgvAlbum.CurrentRow.Cells["Formato"].Value;
-            Console.WriteLine("Género: " + genero);
-            Console.WriteLine("Formato: " + formato);*/
+            if (dgvAlbum.CurrentRow != null)
+            {
+                Album seleccionado = (Album)dgvAlbum.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
         }
 
         private void cargar()
@@ -45,14 +43,19 @@ namespace Discos
             {
                 listaDiscos = negocio.listar();
                 dgvAlbum.DataSource= listaDiscos;
-                dgvAlbum.Columns["UrlImagen"].Visible = false;
-                dgvAlbum.Columns["Numero"].Visible= false;
+                ocultarColumnas();
                 cargarImagen(listaDiscos[0].UrlImagen);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvAlbum.Columns["UrlImagen"].Visible = false;
+            dgvAlbum.Columns["Numero"].Visible = false;
         }
 
         private void cargarImagen(string imagen)
@@ -122,7 +125,21 @@ namespace Discos
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            
+            List<Album> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if(filtro != "")
+            {
+                listaFiltrada = listaDiscos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Genero.Descripcion.ToUpper().Contains(filtro.ToUpper()));    
+            }
+            else
+            {
+                listaFiltrada = listaDiscos;
+            }
+
+            dgvAlbum.DataSource = null;
+            dgvAlbum.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
