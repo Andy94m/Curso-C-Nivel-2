@@ -19,6 +19,7 @@ namespace negocio
 
             try
             {
+                //Clase acceso datos
                 conexion.ConnectionString = "server=localhost; database=POKEDEX_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id from POKEMONS P, ELEMENTOS E, ELEMENTOS D where E.Id = P.IdTipo and D.Id = P.IdDebilidad and P.Activo = 1";
@@ -27,6 +28,7 @@ namespace negocio
                 conexion.Open();
                 lector = comando.ExecuteReader();
 
+                AccesoDatos datos = new AccesoDatos();
                 while (lector.Read())
                 {
                     Pokemon aux = new Pokemon();
@@ -144,7 +146,91 @@ namespace negocio
 
                 throw ex;
             }
-        }  
+        }
+
+        public List<Pokemon> filtrar (string campo, string criterio, string filtro)
+        {
+            List<Pokemon> lista = new List<Pokemon> ();
+            AccesoDatos datos = new AccesoDatos ();
+            try
+            {
+                string consulta = "select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id from POKEMONS P, ELEMENTOS E, ELEMENTOS D where E.Id = P.IdTipo and D.Id = P.IdDebilidad and P.Activo = 1 and ";
+
+                if(campo == "Numero")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "Numero > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += "Numero < " + filtro;
+                            break;
+                        default:
+                            consulta += "Numero = " + filtro;
+                            break;
+                    }
+                }
+                else if (campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "Nombre like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.Descripcion like '%" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "P.Descripcion like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.Descripcion like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Pokemon aux = new Pokemon();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Numero = datos.Lector.GetInt32(0);
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+                    if (!(datos.Lector["UrlImagen"] is DBNull))
+                        aux.UrlImagen = (string)datos.Lector["UtlImagen"];
+
+                    aux.Tipo = new Elemento();
+                    aux.Tipo.id = (int)datos.Lector["IdTipo"];
+                    aux.Tipo.Descripcion = (string)datos.Lector["Tipo"];
+                    
+                    aux.Debilidad = new Elemento();
+                    aux.Debilidad.id = (int)datos.Lector["IdDebilidad"];
+                    aux.Debilidad.Descripcion = (string)datos.Lector["Debilidad"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
-    
 }

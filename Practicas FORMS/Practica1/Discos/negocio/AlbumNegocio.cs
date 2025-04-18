@@ -143,5 +143,92 @@ namespace negocio
                 throw ex;
             }
         }
+
+        public List<Album> filtrar (string campo, string criterio, string filtro)
+        {
+            List<Album> lista = new List<Album>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "select D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion Genero, T.Descripcion Formato, D.IdEstilo, D.IdTipoEdicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and  D.IdTipoEdicion = T.Id and D.CantidadCanciones != 0 and ";
+                if(campo == "Nombre")
+                {
+                    Console.WriteLine("Dentro de nombre");
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "Titulo like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "Titulo like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "Titulo like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Año")
+                {
+                    Console.WriteLine("Dentro de año");
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "YEAR(FechaLanzamiento) > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += "YEAR(FechaLanzamiento) < " + filtro;
+                            break;
+                        default:
+                            consulta += "YEAR(FechaLanzamiento) = " + filtro;
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Dentro de cantidad canciones");
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "CantidadCanciones > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += "CantidadCanciones < " + filtro;
+                            break;
+                        default:
+                            consulta += "CantidadCanciones = " + filtro;
+                            break;
+                    }
+                }
+                Console.WriteLine(consulta);
+                datos.setearConsulta( consulta );
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Album aux = new Album();
+                    aux.Numero = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["Titulo"];
+                    aux.Fecha = (DateTime)datos.Lector["FechaLanzamiento"];
+                    aux.Canciones = (int)datos.Lector["CantidadCanciones"];
+
+                    if (!(datos.Lector["UrlImagenTapa"] is DBNull))
+                        aux.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
+
+                    aux.Genero = new Estilos();
+                    aux.Genero.Id = (int)datos.Lector["IdEstilo"];
+                    aux.Genero.Descripcion = (string)datos.Lector["Genero"];
+
+                    aux.Formato = new Edicion();
+                    aux.Formato.Id = (int)datos.Lector["IdTipoEdicion"];
+                    aux.Formato.Descripcion = (string)datos.Lector["Formato"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
