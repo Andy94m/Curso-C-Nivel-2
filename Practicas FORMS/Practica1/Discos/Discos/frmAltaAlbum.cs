@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.IO;
+using System.Configuration;
 
 namespace Discos
 {
     public partial class frmAltaAlbum : Form
     {
         private Album disco = null;
+        private OpenFileDialog archivo = null;
         public frmAltaAlbum()
         {
             InitializeComponent();
@@ -58,6 +61,10 @@ namespace Discos
                     negocio.agregar(disco);
                     MessageBox.Show("Agregado Exitosamente");
                 }
+
+                if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTPS")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+                
                 Close();
             }
             catch (Exception ex)
@@ -114,6 +121,17 @@ namespace Discos
             catch (Exception ex)
             {
                 pictureBox1.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*jpg;|png|*.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
             }
         }
     }

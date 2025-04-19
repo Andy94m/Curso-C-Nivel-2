@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.Configuration;
 
 namespace Ejemoplos_ado_net
 {
@@ -16,6 +18,7 @@ namespace Ejemoplos_ado_net
     public partial class frmAltaPokemon : Form
     {
         private Pokemon pokemon = null;
+        private OpenFileDialog archivo = null;
 
         public frmAltaPokemon()
         {
@@ -58,6 +61,12 @@ namespace Ejemoplos_ado_net
                     negocio.agregar(pokemon);
                     MessageBox.Show("Agregó exitosamente");
                 }
+
+                //guardar imagen si la levanto local
+                if(archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["carpeta-imagen"] + archivo.SafeFileName);
+
+
                 Close();
             }
             catch (Exception ex)
@@ -110,6 +119,19 @@ namespace Ejemoplos_ado_net
             catch (Exception ex)
             {
                 pbxPokemon.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["carpeta-imagen"] + archivo.SafeFileName);
             }
         }
     }
