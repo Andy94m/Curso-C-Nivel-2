@@ -30,10 +30,6 @@ namespace Discos
             Text = "Modificar Album";
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -43,6 +39,9 @@ namespace Discos
             {
                 if(disco == null)
                     disco = new Album();
+
+                if(validarAlta())
+                    return;
 
                 disco.Nombre = txtNombre.Text;
                 disco.Fecha = dtpFecha.Value;
@@ -73,6 +72,10 @@ namespace Discos
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void frmAltaAlbum_Load(object sender, EventArgs e)
         {
             EdicionNegocio edicionNegocio = new EdicionNegocio();
@@ -133,6 +136,41 @@ namespace Discos
                 txtUrlImagen.Text = archivo.FileName;
                 cargarImagen(archivo.FileName);
             }
+        }
+
+        private bool validarAlta()
+        {
+            if(txtNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese un titulo");
+                return true;
+            }
+
+            if(txtCant.Text != "")
+            {
+                if (!(soloNumerosAlta(txtCant.Text)))
+                {
+                    MessageBox.Show("Ingrese solo valores numericos");
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un valor en Cant Canciones");
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool soloNumerosAlta (string cantidad)
+        {
+            foreach (char caracter in cantidad)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
         }
     }
 }

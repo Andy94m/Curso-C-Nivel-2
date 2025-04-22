@@ -152,6 +152,9 @@ namespace Discos
             AlbumNegocio negocio = new AlbumNegocio();
             try
             {
+                if(validarFiltro())
+                    return;
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAdv.Text;
@@ -162,6 +165,7 @@ namespace Discos
                 MessageBox.Show(ex.ToString());
             }
         }
+
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -181,5 +185,44 @@ namespace Discos
                 cboCriterio.Items.Add("Igual a");
             }
         }
+
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo");
+                return true;
+            }
+
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio");
+                return true;
+            }
+
+            if(cboCampo.SelectedItem.ToString() == "Año" || cboCampo.SelectedItem.ToString() == "Cant.Canciones")
+            {
+                if(txtFiltroAdv.Text == "")
+                {
+                    MessageBox.Show("Ingrese un valor para buscar");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAdv.Text)))
+                {
+                    MessageBox.Show("Ingrese un valor numerico");
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach(char caracter in cadena)
+            {
+                if(!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }       
     }
 }

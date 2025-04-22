@@ -44,6 +44,10 @@
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.lblR1 = new System.Windows.Forms.Label();
+            this.lblR2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +94,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(31, 192);
+            this.btnAceptar.Location = new System.Drawing.Point(33, 184);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 45);
             this.btnAceptar.TabIndex = 7;
@@ -100,7 +104,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(155, 192);
+            this.btnCancelar.Location = new System.Drawing.Point(157, 184);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(105, 45);
             this.btnCancelar.TabIndex = 8;
@@ -172,7 +176,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(387, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 225);
+            this.pictureBox1.Size = new System.Drawing.Size(235, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -187,11 +191,51 @@
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
+            // lblR1
+            // 
+            this.lblR1.AutoSize = true;
+            this.lblR1.Location = new System.Drawing.Point(329, 15);
+            this.lblR1.Name = "lblR1";
+            this.lblR1.Size = new System.Drawing.Size(19, 13);
+            this.lblR1.TabIndex = 18;
+            this.lblR1.Text = "*R";
+            // 
+            // lblR2
+            // 
+            this.lblR2.AutoSize = true;
+            this.lblR2.Location = new System.Drawing.Point(231, 77);
+            this.lblR2.Name = "lblR2";
+            this.lblR2.Size = new System.Drawing.Size(37, 13);
+            this.lblR2.TabIndex = 19;
+            this.lblR2.Text = "*R  *N";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "*R = Valor requerido";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(266, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "*N = Solo numerico";
+            // 
             // frmAltaAlbum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 251);
+            this.ClientSize = new System.Drawing.Size(634, 244);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblR2);
+            this.Controls.Add(this.lblR1);
             this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUrlImagen);
@@ -236,5 +280,9 @@
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.Label lblR1;
+        private System.Windows.Forms.Label lblR2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
