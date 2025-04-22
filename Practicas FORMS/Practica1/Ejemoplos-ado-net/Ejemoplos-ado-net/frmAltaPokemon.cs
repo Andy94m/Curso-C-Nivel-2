@@ -32,10 +32,6 @@ namespace Ejemoplos_ado_net
             Text = "Modificar Pokemon";
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -44,12 +40,18 @@ namespace Ejemoplos_ado_net
             {
                 if (pokemon == null)
                     pokemon = new Pokemon();
+
+                if (validarAlta())
+                    return;
+
                 pokemon.Numero = int.Parse(txtNumero.Text);
                 pokemon.Nombre = txtNombre.Text;
                 pokemon.Descripcion = txtDescripcion.Text;
                 pokemon.UrlImagen = txtUrlImagen.Text;
                 pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
+
+                
 
                 if (pokemon.Id != 0)
                 {
@@ -66,7 +68,6 @@ namespace Ejemoplos_ado_net
                 if(archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["carpeta-imagen"] + archivo.SafeFileName);
 
-
                 Close();
             }
             catch (Exception ex)
@@ -75,6 +76,10 @@ namespace Ejemoplos_ado_net
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void frmAltaPokemon_Load(object sender, EventArgs e)
         {
             ElementoNegocio elementoNegocio = new negocio.ElementoNegocio();
@@ -133,6 +138,46 @@ namespace Ejemoplos_ado_net
 
                 //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["carpeta-imagen"] + archivo.SafeFileName);
             }
+        }
+
+
+        private bool validarAlta()
+        {
+            if (campoVacio(txtNumero.Text))
+            {
+
+                MessageBox.Show("Debe ingresar un Numero");
+                return true;
+            }
+            if (!(soloNumerosAlta(txtNumero.Text)))
+            {
+                MessageBox.Show("No se admiten letras en Numero");
+                return true;
+            }
+            if (campoVacio(txtNombre.Text))
+            {
+                MessageBox.Show("Debe ingresar un Nombre");
+                return true;
+            }
+
+            return false;
+        }
+        private bool soloNumerosAlta(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
+        private bool campoVacio(string cadena)
+        {
+            if (cadena.Length == 0)
+                return true;
+
+            return false;
         }
     }
 }

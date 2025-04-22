@@ -213,7 +213,7 @@ namespace negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     if (!(datos.Lector["UrlImagen"] is DBNull))
-                        aux.UrlImagen = (string)datos.Lector["UtlImagen"];
+                        aux.UrlImagen = (string)datos.Lector["UrlImagen"];
 
                     aux.Tipo = new Elemento();
                     aux.Tipo.id = (int)datos.Lector["IdTipo"];

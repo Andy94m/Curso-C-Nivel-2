@@ -162,11 +162,51 @@ namespace Ejemoplos_ado_net
             }
         }
 
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo para filtrar. ");
+                return true;
+            }
+
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio para filtrar. ");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Numero")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvn.Text))
+                {
+                    MessageBox.Show("Debes cargar el filtro para numeros");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvn.Text))) 
+                {
+                    MessageBox.Show("Solo nros para filtrar por campo numerico. ");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
+                if(validarFiltro())
+                    return; //Si devuelve algo invalida el evento
 
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
