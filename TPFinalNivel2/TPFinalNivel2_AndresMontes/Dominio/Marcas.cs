@@ -10,5 +10,11 @@ namespace Dominio
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
+
+        //Sobrescribe el metodo ToString para que devuelva el valor de descripcion en vez del namespace
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

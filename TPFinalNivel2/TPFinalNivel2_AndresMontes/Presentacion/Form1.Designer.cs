@@ -31,15 +31,15 @@
             this.lblBuscarRap = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbCatalogo = new System.Windows.Forms.PictureBox();
             this.lblBuscarAvn = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEliminar2 = new System.Windows.Forms.Button();
+            this.btnEliminar1 = new System.Windows.Forms.Button();
             this.btnBusqAdv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscarRap
@@ -67,18 +67,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(567, 298);
             this.dataGridView1.TabIndex = 2;
             // 
-            // pictureBox1
+            // pcbCatalogo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(689, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 298);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pcbCatalogo.Location = new System.Drawing.Point(689, 32);
+            this.pcbCatalogo.Name = "pcbCatalogo";
+            this.pcbCatalogo.Size = new System.Drawing.Size(300, 298);
+            this.pcbCatalogo.TabIndex = 3;
+            this.pcbCatalogo.TabStop = false;
             // 
             // lblBuscarAvn
             // 
             this.lblBuscarAvn.AutoSize = true;
-            this.lblBuscarAvn.Location = new System.Drawing.Point(47, 400);
+            this.lblBuscarAvn.Location = new System.Drawing.Point(47, 372);
             this.lblBuscarAvn.Name = "lblBuscarAvn";
             this.lblBuscarAvn.Size = new System.Drawing.Size(105, 13);
             this.lblBuscarAvn.TabIndex = 4;
@@ -102,23 +102,23 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEliminar2
             // 
-            this.button1.Location = new System.Drawing.Point(12, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminar2.Location = new System.Drawing.Point(12, 119);
+            this.btnEliminar2.Name = "btnEliminar2";
+            this.btnEliminar2.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar2.TabIndex = 7;
+            this.btnEliminar2.Text = "Eliminar2";
+            this.btnEliminar2.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // btnEliminar1
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(12, 90);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Agregar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar1.Location = new System.Drawing.Point(12, 90);
+            this.btnEliminar1.Name = "btnEliminar1";
+            this.btnEliminar1.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar1.TabIndex = 8;
+            this.btnEliminar1.Text = "Eliminar1";
+            this.btnEliminar1.UseVisualStyleBackColor = true;
             // 
             // btnBusqAdv
             // 
@@ -133,14 +133,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 506);
+            this.ClientSize = new System.Drawing.Size(1006, 506);
             this.Controls.Add(this.btnBusqAdv);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminar1);
+            this.Controls.Add(this.btnEliminar2);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblBuscarAvn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pcbCatalogo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblBuscarRap);
@@ -148,7 +148,7 @@
             this.Text = "Catalogo Comercio";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCatalogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,12 +159,12 @@
         private System.Windows.Forms.Label lblBuscarRap;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbCatalogo;
         private System.Windows.Forms.Label lblBuscarAvn;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEliminar2;
+        private System.Windows.Forms.Button btnEliminar1;
         private System.Windows.Forms.Button btnBusqAdv;
     }
 }
