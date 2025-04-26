@@ -14,7 +14,7 @@ namespace Negocio
         private SqlCommand comando;
         private SqlDataReader lector;
 
-        //Si bien lector es privado, se expone un acceso get que retorna el valor del atributo
+        //Si bien lector es privado, se expone un acceso get que retorna el valor del atributo a leer
         public SqlDataReader Lector 
         { 
             get{ return lector; }
@@ -49,7 +49,7 @@ namespace Negocio
             }
         }
 
-        //Ejecuta la query y obtiene datos de retorno, solo ejecuta -> insert, update o delete.
+        //solo ejecuta query, no tiene datos de retorno-> insert, update o delete.
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
