@@ -23,12 +23,12 @@ namespace Negocio
         //Constructor de la clase,instancia la conexion SQL de forma local con autenticación de windows
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRES; database=CATALOGO_DB; integrated securty=true");
+            conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
         //setea el tipo de comando y se pasa por parametro el string
-        public void setearConsultar(string consulta)
+        public void setearConsulta(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
@@ -62,6 +62,15 @@ namespace Negocio
             {
                 throw ex;
             }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
         }
 
         //Evalua si lector se instanció y cierra la conexión.

@@ -34,7 +34,7 @@ namespace Negocio
 
                 throw ex;
             }
-            finally
+            finally 
             {
                 datos.cerrarConexion();
             }
