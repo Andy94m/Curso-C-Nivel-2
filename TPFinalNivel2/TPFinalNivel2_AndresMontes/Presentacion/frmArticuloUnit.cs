@@ -16,5 +16,10 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void frmArticuloUnit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

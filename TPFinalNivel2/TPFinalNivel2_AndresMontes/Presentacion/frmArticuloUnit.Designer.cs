@@ -185,7 +185,8 @@
             this.Controls.Add(this.lblCodArtUnit);
             this.Controls.Add(this.btnAceptar);
             this.Name = "frmArticuloUnit";
-            this.Text = "Articulo";
+            this.Text = "Articulo detalle";
+            this.Load += new System.EventHandler(this.frmArticuloUnit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbArtUnit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

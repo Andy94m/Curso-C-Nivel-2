@@ -82,6 +82,8 @@ namespace Presentacion
                 articulo.Descripcion = txtDesc.Text;
                 articulo.Compania = (Marcas)cboMarca.SelectedItem;
                 articulo.Tipo = (Categorias)cboCategoria.SelectedItem;
+                articulo.UrlImagen = (txtImg.Text);
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 if (articulo.Id != 0)
                 {
@@ -96,6 +98,8 @@ namespace Presentacion
 
                 if (archivo != null && !(txtImg.Text.ToUpper().Contains("HTTPS")))
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
+                Close();
             }
             catch (Exception ex)
             {
@@ -144,6 +148,7 @@ namespace Presentacion
             if(txtCod.Text == "")
             {
                 MessageBox.Show("Ingrese un codigo");
+                return true;
             }
 
             if(txtNom.Text == "")
