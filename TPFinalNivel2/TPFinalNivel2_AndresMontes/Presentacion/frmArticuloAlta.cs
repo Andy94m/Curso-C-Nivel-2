@@ -20,6 +20,12 @@ namespace Presentacion
     {
         private Articulo articulo = null;
         private OpenFileDialog archivo = null;
+        Validaciones validar = new Validaciones();
+
+        public frmArticuloAlta()
+        {
+            InitializeComponent();
+        }
 
         public frmArticuloAlta(Articulo articulo)
         {
@@ -27,14 +33,11 @@ namespace Presentacion
             this.articulo = articulo;
             Text = "Modificar articulo";
         }
-        public frmArticuloAlta()
-        {
-            InitializeComponent();
-        }
         private void frmArticuloAlta_Load(object sender, EventArgs e)
         {
             MarcasNegocio marcasNegocio = new MarcasNegocio();
             CategoriasNegocio categoriasNegocio = new CategoriasNegocio();
+            
 
             try
             {
@@ -48,14 +51,16 @@ namespace Presentacion
 
                 if(articulo != null)
                 {
-
+                    Console.Write(cboCategoria.Text);
+                    Console.WriteLine(cboMarca.Text);
                     txtCod.Text = articulo.Cod.ToString();
                     txtNom.Text = articulo.Nombre.ToString();
                     txtDesc.Text = articulo.Descripcion.ToString();
-                    cboMarca.SelectedValue = articulo.Compania.Id.ToString();
-                    cboCategoria.SelectedValue = articulo.Tipo.Id.ToString();
+                    cboMarca.SelectedValue = articulo.Compania.Id;
+                    cboCategoria.SelectedValue = articulo.Tipo.Id;
                     txtImg.Text = articulo.UrlImagen.ToString();
                     txtPrecio.Text = articulo.Precio.ToString();
+                    
                 }
             }
             catch (Exception ex)
@@ -117,19 +122,7 @@ namespace Presentacion
 
         private void txtImg_Leave(object sender, EventArgs e)
         {
-            cargarImagen(txtImg.Text);
-        }
-
-        private void cargarImagen(string imagen)
-        {
-            try
-            {
-                pcbAgregar.Load(imagen);
-            }
-            catch (Exception ex)
-            {
-                pcbAgregar.Load("https://glomastore.s3.amazonaws.com/img/sin_imagen.png");
-            }
+            validar.cargarImagen(pcbAgregar, txtImg.Text);
         }
 
         private void btnAgregarImg_Click(object sender, EventArgs e)
@@ -139,7 +132,8 @@ namespace Presentacion
             if (archivo.ShowDialog() == DialogResult.OK) 
             {
                 txtImg.Text = archivo.FileName;
-                cargarImagen(archivo.FileName);
+                //cargarImagen(archivo.FileName);
+                validar.cargarImagen(pcbAgregar, archivo.FileName);
             }
         }
 
@@ -157,26 +151,17 @@ namespace Presentacion
                 return true;
             }
 
-            if(txtPrecio.Text != "")
+            if(txtPrecio.Text == "")
             {
-                if (!(soloNumerosAlta(txtPrecio.Text)))
-                {
-                    MessageBox.Show("Ingrese solo valores numericos");
-                    return true;
-                }
+                MessageBox.Show("Ingrese solo valores numericos");
+                return true;
             }
             return false;
         }
 
-        private bool soloNumerosAlta(string cantidad)
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            foreach(char caracter in cantidad)
-            {
-                if(!(char.IsNumber(caracter)))
-                    return false;
-            }
-
-            return true;
+            validar.SoloNumeros(e);
         }
     }
 }

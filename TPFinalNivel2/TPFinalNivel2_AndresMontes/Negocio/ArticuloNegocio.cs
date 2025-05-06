@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -20,32 +22,61 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion DescMarca, C.Descripcion DescCategoria, ImagenUrl, A.IdMarca, A.IdCategoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and  A.IdCategoria= C.ID and Nombre is not null and Codigo <> '0'");
+                datos.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion DescMarca, C.Descripcion DescCategoria, ImagenUrl, A.IdMarca, A.IdCategoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and  A.IdCategoria= C.ID and Nombre is not null and Codigo NOT LIKE '#%'");
                 datos.ejecutarLectura();
-
                 while (datos.Lector.Read())
+                    lista.Add(auxFila(datos.Lector));
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        private Articulo auxFila(SqlDataReader lector)
+        {
+            Articulo aux = new Articulo
+            {
+                Id = (int)lector["Id"],
+                Cod = (string)lector["Codigo"],
+                Nombre = (string)lector["Nombre"],
+                Descripcion = (string)lector["Descripcion"],
+                Compania = new Marcas
                 {
-                    Articulo aux = new Articulo();
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.Cod = (string)datos.Lector["Codigo"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    
-                    aux.Compania = new Marcas();
-                    aux.Compania.Id = (int)datos.Lector["IdMarca"];
-                    aux.Compania.Descripcion = (string)datos.Lector["DescMarca"];
+                    Id = (int)lector["IdMarca"],
+                    Descripcion = (string)lector["DescMarca"]
+                },
+                Tipo = new Categorias
+                {
+                    Id = (int)lector["IdCategoria"],
+                    Descripcion = (string)lector["DescCategoria"]
+                },
+                Precio = (decimal)lector["Precio"]
+            };
 
-                    aux.Tipo = new Categorias();
-                    aux.Tipo.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Tipo.Descripcion = (string)datos.Lector["DescCategoria"];
+            if (!(lector["ImagenUrl"] is DBNull))
+                aux.UrlImagen = (string)lector["ImagenUrl"];
 
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+            return aux;
+        }
 
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+        public List<Articulo> listarExcluidos()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
 
-                    lista.Add(aux);
-                }
+            try
+            {
+                datos.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion DescMarca, C.Descripcion DescCategoria, ImagenUrl, A.IdMarca, A.IdCategoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and  A.IdCategoria= C.ID and Nombre is not null and Codigo LIKE '#%'");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                    lista.Add(auxFila(datos.Lector));
+
                 return lista;
             }
             catch (Exception ex)
@@ -115,7 +146,7 @@ namespace Negocio
 
         }
 
-        public void eliminar ( int id)
+        public void eliminarFisico (int id)
         {
             try
             {
@@ -131,12 +162,12 @@ namespace Negocio
             }
         }
 
-        public void eliminarLogico( int id)
+        public void eliminarLogico(int id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update ARTICULOS set Codigo = 0 where Id = @Id");
+                datos.setearConsulta("update ARTICULOS set Codigo = '#' + Codigo where Id = @Id");
                 datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
             }
@@ -146,22 +177,50 @@ namespace Negocio
             }
         }
 
+        public void restaurarEliminado(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo = REPLACE(Codigo, '#', '') where Codigo LIKE '#%' AND Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<Articulo> filtrar (string columna, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos ();
+            Console.WriteLine("Dentro de metodo filtrar");
             try 
             {
-                string consulta = "select A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion DescMarca, C.Descripcion DescCategoria, ImagenUrl, A.IdMarca, A.IdCategoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and  A.IdCategoria= C.ID and Nombre is not null and Codigo <> 0 and ";
+                string consulta = "select A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion DescMarca, C.Descripcion DescCategoria, ImagenUrl, A.IdMarca, A.IdCategoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and  A.IdCategoria = C.Id and Nombre is not null and Codigo IS NOT NULL and Codigo NOT LIKE '#%' AND ";
 
-                if(columna == "Nombre")
+                if(columna == "Nombre" || columna == "Codigo" || columna == "Marca" || columna == "Categoria" || columna == "Descripcion")
                 {
+                    if(columna == "Marca")
+                    {
+                        columna = "M.Descripcion";
+                    }
+                    else if(columna == "Categoria")
+                    {
+                        columna = "C.Descripcion";
+                    }
+
                     if (criterio == "Comienza con")
-                        consulta += "Nombre like '" + filtro + "%'";
+                        consulta += columna + " like '" + filtro + "%'";
                     else if (criterio == "Termina con")
-                        consulta += "Nombre like '%" + filtro + "'";
+                        consulta += columna + " like '%" + filtro + "'";
                     else
-                        consulta += "Nombre like '%" + filtro + "%'";
+                        consulta += columna + " like '%" + filtro + "%'";
+
+                    Console.WriteLine (consulta);
                 }
                 else if (columna == "Precio")
                 {
@@ -172,40 +231,20 @@ namespace Negocio
                     else
                         consulta += "Precio = " + filtro;
                 }
-                else if (columna == "Descripcion")
-                Console.WriteLine (consulta);
+
+                Console.WriteLine ("SQL " + consulta);
                 datos.setearConsulta (consulta);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
-                {
-                    Articulo aux = new Articulo();
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.Cod = (string)datos.Lector["Codigo"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    lista.Add(auxFila(datos.Lector));
 
-                    aux.Compania = new Marcas();
-                    aux.Compania.Id = (int)datos.Lector["IdMarca"];
-                    aux.Compania.Descripcion = (string)datos.Lector["DescMarca"];
-
-                    aux.Tipo = new Categorias();
-                    aux.Tipo.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Tipo.Descripcion = (string)datos.Lector["DescCategoria"];
-
-                    aux.Precio = (decimal)datos.Lector["Precio"];
-
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
-
-                    lista.Add(aux);
-                }
+                return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return lista;
         }
 
     }

@@ -176,6 +176,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 19;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // cboMarca
             // 
@@ -211,6 +212,7 @@
             this.pcbAgregar.Location = new System.Drawing.Point(467, 21);
             this.pcbAgregar.Name = "pcbAgregar";
             this.pcbAgregar.Size = new System.Drawing.Size(268, 246);
+            this.pcbAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbAgregar.TabIndex = 23;
             this.pcbAgregar.TabStop = false;
             // 

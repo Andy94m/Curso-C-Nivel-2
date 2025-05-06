@@ -9,18 +9,16 @@ namespace Negocio
 {
     internal class AccesoDatos
     {
-        //Se declaran los atributos de tipo Sql
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
 
-        //Si bien lector es privado, se expone un acceso get que retorna el valor del atributo a leer
+        //se expone un acceso get que retorna el valor del atributo a leer
         public SqlDataReader Lector 
         { 
             get{ return lector; }
         }
 
-        //Constructor de la clase,instancia la conexion SQL de forma local con autenticación de windows
         public AccesoDatos()
         {
             conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true");
@@ -34,7 +32,6 @@ namespace Negocio
             comando.CommandText = consulta;
         }
 
-        //Ejecuta la query y lee los datos devueltos -> SELECT
         public void ejecutarLectura()
         {
             comando.Connection = conexion;
@@ -49,7 +46,6 @@ namespace Negocio
             }
         }
 
-        //solo ejecuta query, no tiene datos de retorno-> insert, update o delete.
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
@@ -73,7 +69,6 @@ namespace Negocio
             comando.Parameters.AddWithValue(nombre, valor);
         }
 
-        //Evalua si lector se instanció y cierra la conexión.
         public void cerrarConexion()
         {
             if (lector != null)

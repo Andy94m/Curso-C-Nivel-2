@@ -36,7 +36,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnPapelera = new System.Windows.Forms.Button();
             this.btnEliminar1 = new System.Windows.Forms.Button();
-            this.btnBusqAdv = new System.Windows.Forms.Button();
             this.cboColumna = new System.Windows.Forms.ComboBox();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.txtBusqFiltro = new System.Windows.Forms.TextBox();
@@ -69,10 +68,13 @@
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(101, 15);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(662, 353);
             this.dgvArticulos.TabIndex = 2;
+            this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pcbCatalogo
@@ -115,6 +117,7 @@
             this.btnPapelera.TabIndex = 7;
             this.btnPapelera.Text = "Papelera";
             this.btnPapelera.UseVisualStyleBackColor = true;
+            this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
             // 
             // btnEliminar1
             // 
@@ -123,19 +126,9 @@
             this.btnEliminar1.Name = "btnEliminar1";
             this.btnEliminar1.Size = new System.Drawing.Size(78, 27);
             this.btnEliminar1.TabIndex = 8;
-            this.btnEliminar1.Text = "Eliminar1";
+            this.btnEliminar1.Text = "Eliminar";
             this.btnEliminar1.UseVisualStyleBackColor = true;
             this.btnEliminar1.Click += new System.EventHandler(this.btnEliminar1_Click);
-            // 
-            // btnBusqAdv
-            // 
-            this.btnBusqAdv.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusqAdv.Location = new System.Drawing.Point(316, 381);
-            this.btnBusqAdv.Name = "btnBusqAdv";
-            this.btnBusqAdv.Size = new System.Drawing.Size(88, 27);
-            this.btnBusqAdv.TabIndex = 9;
-            this.btnBusqAdv.Text = "Avanzada";
-            this.btnBusqAdv.UseVisualStyleBackColor = true;
             // 
             // cboColumna
             // 
@@ -162,6 +155,7 @@
             this.txtBusqFiltro.Name = "txtBusqFiltro";
             this.txtBusqFiltro.Size = new System.Drawing.Size(209, 20);
             this.txtBusqFiltro.TabIndex = 12;
+            this.txtBusqFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqFiltro_KeyPress);
             // 
             // lblColumna
             // 
@@ -216,7 +210,6 @@
             this.Controls.Add(this.txtBusqFiltro);
             this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.cboColumna);
-            this.Controls.Add(this.btnBusqAdv);
             this.Controls.Add(this.btnEliminar1);
             this.Controls.Add(this.btnPapelera);
             this.Controls.Add(this.btnModificar);
@@ -245,7 +238,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnPapelera;
         private System.Windows.Forms.Button btnEliminar1;
-        private System.Windows.Forms.Button btnBusqAdv;
         private System.Windows.Forms.ComboBox cboColumna;
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.TextBox txtBusqFiltro;
