@@ -105,18 +105,44 @@ namespace Presentacion
         private void eliminarLogico()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            Articulo seleccionado;
+            List<int> idSeleccionados = new List<int>();
 
             try
             {
-                DialogResult respuesta = MessageBox.Show("¿Desea enviar este elemento a la papelera?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
-                if(respuesta == DialogResult.Yes)
+                foreach (DataGridViewRow fila in dgvArticulos.SelectedRows)
                 {
-                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    if (fila.DataBoundItem is Articulo articulo)
+                    {
+                        idSeleccionados.Add(articulo.Id);
+                    }
+                }
 
-                    negocio.eliminarLogico(seleccionado.Id);
-                    cargar();
+                if (idSeleccionados.Count == 0)
+                {
+                    MessageBox.Show("Seleccione al menos un elemento para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string mensaje;
+                if (idSeleccionados.Count == 1)
+                {
+                    mensaje = "¿Desea enviar este elemento a la papelera?";
+                }
+                else
+                {
+                    mensaje = "¿Desea enviar estos elementos a la papelera?";
+                }
+
+                DialogResult respuesta = MessageBox.Show(mensaje, "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    foreach (int id in idSeleccionados)
+                    {
+                        negocio.eliminarLogico(id);
+                    }
+
+                    cargar(); // Recargar la grilla después de eliminar
                 }
             }
             catch (Exception ex)
@@ -249,6 +275,9 @@ namespace Presentacion
         {
             frmPapelera papelera = new frmPapelera();
             papelera.ShowDialog();
+
+            if (papelera.cierrePap)
+                cargar();
         }
     }
 }

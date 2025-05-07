@@ -193,6 +193,8 @@ namespace Negocio
             }
         }
 
+        
+
         public List<Articulo> filtrar (string columna, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();

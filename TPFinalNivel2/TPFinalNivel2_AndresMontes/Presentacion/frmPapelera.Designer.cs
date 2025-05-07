@@ -43,7 +43,6 @@
             this.dgvPapelera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPapelera.Size = new System.Drawing.Size(911, 330);
             this.dgvPapelera.TabIndex = 0;
-            this.dgvPapelera.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPapelera_CellContentClick);
             // 
             // btnPapElim
             // 
@@ -65,6 +64,7 @@
             this.btnPapRest.TabIndex = 2;
             this.btnPapRest.Text = "Restaurar";
             this.btnPapRest.UseVisualStyleBackColor = true;
+            this.btnPapRest.Click += new System.EventHandler(this.btnPapRest_Click);
             // 
             // btnPapVaciar
             // 
@@ -75,6 +75,7 @@
             this.btnPapVaciar.TabIndex = 3;
             this.btnPapVaciar.Text = "Vaciar papelera";
             this.btnPapVaciar.UseVisualStyleBackColor = true;
+            this.btnPapVaciar.Click += new System.EventHandler(this.btnPapVaciar_Click);
             // 
             // frmPapelera
             // 
@@ -87,6 +88,7 @@
             this.Controls.Add(this.dgvPapelera);
             this.Name = "frmPapelera";
             this.Text = "Papelera de reciclaje";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPapelera_FormClosed);
             this.Load += new System.EventHandler(this.frmPapelera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPapelera)).EndInit();
             this.ResumeLayout(false);
