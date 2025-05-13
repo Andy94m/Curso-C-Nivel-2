@@ -31,8 +31,14 @@ namespace Presentacion
             cboColumna.Items.Add("Nombre");
             cboColumna.Items.Add("Descripcion");
             cboColumna.Items.Add("Precio");
-            cboColumna.Items.Add("Marca");
-            cboColumna.Items.Add("Categoria");
+            cboColumna.Items.Add("Compania");
+            cboColumna.Items.Add("Tipo");
+
+            cboOrdCol.Items.Add("Default");
+            cboOrdCol.Items.Add("Nombre");
+            cboOrdCol.Items.Add("Compania");
+            cboOrdCol.Items.Add("Tipo");
+            cboOrdCol.Items.Add("Precio");
         }
 
         private void cargar()
@@ -163,7 +169,7 @@ namespace Presentacion
 
             if(filtro.Length >= 2)
             {
-                listaFiltrada = listaArticulos.FindAll(x => x.Cod.ToUpper().Contains(filtro.ToUpper()) || x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                listaFiltrada = listaArticulos.FindAll(x => x.Cod.ToUpper().Contains(filtro.ToUpper()) || x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Compania.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
             else
             {
@@ -278,6 +284,100 @@ namespace Presentacion
 
             if (papelera.cierrePap)
                 cargar();
+        }
+
+        private void cboOrdCol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboOrdCol.SelectedItem.ToString();
+
+            if (opcion == "Precio")
+            {
+                cboOrdCri.Items.Clear();
+                cboOrdCri.Items.Add("Menor a mayor");
+                cboOrdCri.Items.Add("Mayor a menor");
+            }
+            else if (opcion == "Default")
+            {
+                cargar();
+                cboOrdCri.Items.Clear();
+            }
+            else
+            {
+                cboOrdCri.Items.Clear();
+                cboOrdCri.Items.Add("Alfabeticamente A - Z");
+                cboOrdCri.Items.Add("Alfabeticamente Z - A");
+            }
+        }
+
+        private void cboOrdCri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cboOrdCri.SelectedIndex;
+            string columna = cboOrdCol.SelectedItem.ToString();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            listaArticulos = negocio.listar();
+
+            Console.WriteLine(columna + " INDEX: " + index );
+
+            try
+            {
+                if (columna == "Precio")
+                {
+                    if (index == 0)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderBy(a => a.Precio).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                    else if (index == 1)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderByDescending(a => a.Precio).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                }
+                else if(columna == "Nombre")
+                {
+                    if (index == 0)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderBy(a => a.Nombre).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                    else if (index == 1)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderByDescending(a => a.Nombre).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                }
+                else if( columna == "Compania")
+                {
+                    if (index == 0)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderBy(a => a.Compania.Descripcion).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                    else if (index == 1)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderByDescending(a => a.Compania.Descripcion).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                }
+                else if (columna == "Tipo")
+                {
+                    if (index == 0)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderBy(a => a.Tipo.Descripcion).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                    else if (index == 1)
+                    {
+                        List<Articulo> ordenados = listaArticulos.OrderByDescending(a => a.Tipo.Descripcion).ToList();
+                        dgvArticulos.DataSource = ordenados;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
